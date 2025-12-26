@@ -168,6 +168,29 @@ remove(index) {
   return node.data;
 }
 
+removeNode(node) {
+  if (node === null || node === undefined) {
+    throw new RangeError("Node must not be null");
+  }
+
+  // empty list
+  if (this.head === null) return null;
+
+  // node is head
+  if (node === this.head) return this.removeFirst();
+
+  // node is tail
+  if (node === this.tail) return this.removeLast();
+
+  // middle node
+  node.prev.next = node.next;
+  node.next.prev = node.prev;
+
+  this._size--;
+  return node.data;
+}
+
+
 set(index, data) {
   this._checkIndexAccess(index);
   this.getNode(index).data = data;
