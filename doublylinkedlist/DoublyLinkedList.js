@@ -173,6 +173,11 @@ set(index, data) {
   this.getNode(index).data = data;
 }
 
+clear() {
+  this.head = null;
+  this.tail = null;
+  this._size = 0;
+}
 
 
 }
