@@ -179,5 +179,30 @@ clear() {
   this._size = 0;
 }
 
+//Passing tests
+getFirstNode() {
+  return this.head;
+}
+
+getLastNode() {
+  return this.tail;
+}
+
+getFirst() {
+  return this.head ? this.head.data : null;
+}
+
+getLast() {
+  return this.tail ? this.tail.data : null;
+}
+
+getNextNode(node) {
+  return node ? node.next : null;
+}
+
+getPreviousNode(node) {
+  return node ? node.prev : null;
+}
+
 
 }
