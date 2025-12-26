@@ -41,4 +41,22 @@ export default class DoublyLinkedList {
   this._size++;
 }
 
+addFirst(data) {
+  const newNode = { data, prev: null, next: null };
+
+  // empty list
+  if (this.head === null) {
+    this.head = newNode;
+    this.tail = newNode;
+    this._size = 1;
+    return;
+  }
+
+  // non-empty list
+  newNode.next = this.head;
+  this.head.prev = newNode;
+  this.head = newNode;
+  this._size++;
+}
+
 }
