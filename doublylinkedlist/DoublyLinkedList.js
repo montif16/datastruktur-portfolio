@@ -101,14 +101,21 @@ removeLast() {
   return removed.data;
 }
 
-_checkIndex(index) {
+_checkIndexAccess(index) {
   if (!Number.isInteger(index) || index < 0 || index >= this._size) {
     throw new RangeError("Index out of bounds");
   }
 }
 
+_checkIndexInsert(index) {
+  if (!Number.isInteger(index) || index < 0 || index > this._size) {
+    throw new RangeError("Index out of bounds");
+  }
+}
+
+
 getNode(index) {
-  this._checkIndex(index);
+  this._checkIndexAccess(index);
 
   let current = this.head;
   for (let i = 0; i < index; i++) {
@@ -120,5 +127,31 @@ getNode(index) {
 get(index) {
   return this.getNode(index).data;
 }
+
+insert(index, data) {
+
+this._checkIndexInsert(index)
+
+  if (index === 0) {
+    this.addFirst(data);
+    return;
+  }
+
+  if (index === this._size) {
+    this.addLast(data);
+    return;
+  }
+
+  const current = this.getNode(index);
+  const prev = current.prev;
+
+  const newNode = { data, prev: prev, next: current };
+
+  prev.next = newNode;
+  current.prev = newNode;
+
+  this._size++;
+}
+
 
 }

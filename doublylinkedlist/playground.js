@@ -73,7 +73,7 @@ list.printList();
 
 console.log("removed:", list.removeLast()); // null
 */
-
+/*
 //Walking the list
 const list = new DoublyLinkedList();
 list.addLast("A");
@@ -89,4 +89,20 @@ try {
 } catch (e) {
   console.log("error:", e instanceof RangeError);
 }
+*/
+
+//Insert
+
+const list = new DoublyLinkedList();
+list.addLast("A");
+list.addLast("C");
+
+list.insert(1, "B");
+list.printList(); // A <-> B <-> C
+
+list.insert(0, "START");
+list.printList(); // START <-> A <-> B <-> C
+
+list.insert(list.size(), "END");
+list.printList(); // START <-> A <-> B <-> C <-> END
 
