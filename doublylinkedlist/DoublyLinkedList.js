@@ -101,4 +101,24 @@ removeLast() {
   return removed.data;
 }
 
+_checkIndex(index) {
+  if (!Number.isInteger(index) || index < 0 || index >= this._size) {
+    throw new RangeError("Index out of bounds");
+  }
+}
+
+getNode(index) {
+  this._checkIndex(index);
+
+  let current = this.head;
+  for (let i = 0; i < index; i++) {
+    current = current.next;
+  }
+  return current;
+}
+
+get(index) {
+  return this.getNode(index).data;
+}
+
 }
