@@ -168,6 +168,11 @@ remove(index) {
   return node.data;
 }
 
+set(index, data) {
+  this._checkIndexAccess(index);
+  this.getNode(index).data = data;
+}
+
 
 
 }
