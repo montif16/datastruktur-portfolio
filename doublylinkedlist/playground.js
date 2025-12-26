@@ -35,6 +35,7 @@ console.log("tail.prev.data =", list.tail.prev.data);
 */
 
 //RemoveFirst
+/*
 const list = new DoublyLinkedList();
 list.addLast("A");
 list.addLast("B");
@@ -51,3 +52,23 @@ console.log("removed:", list.removeFirst()); // C
 list.printList();
 
 console.log("removed:", list.removeFirst()); // null
+*/
+
+//remove last
+const list = new DoublyLinkedList();
+list.addLast("A");
+list.addLast("B");
+list.addLast("C");
+list.printList();
+
+console.log("removed:", list.removeLast()); // C
+list.printList();
+
+console.log("removed:", list.removeLast()); // B
+list.printList();
+
+console.log("removed:", list.removeLast()); // A
+list.printList();
+
+console.log("removed:", list.removeLast()); // null
+

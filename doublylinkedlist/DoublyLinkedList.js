@@ -80,4 +80,25 @@ removeFirst() {
   return removed.data;
 }
 
+removeLast() {
+  if (this.tail === null) return null;
+
+  const removed = this.tail;
+
+  // single element
+  if (this.head === this.tail) {
+    this.head = null;
+    this.tail = null;
+    this._size = 0;
+    return removed.data;
+  }
+
+  // move tail backward
+  this.tail = removed.prev;
+  this.tail.next = null;
+
+  this._size--;
+  return removed.data;
+}
+
 }
