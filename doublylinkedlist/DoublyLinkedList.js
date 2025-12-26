@@ -227,5 +227,57 @@ getPreviousNode(node) {
   return node ? node.prev : null;
 }
 
+insertAfterNode(node, newNode) {
+  if (node == null || newNode == null) {
+    throw new RangeError("Node must not be null");
+  }
+
+  // if inserting after tail, it's basically addLast with an existing node
+  if (node === this.tail) {
+    newNode.prev = this.tail;
+    newNode.next = null;
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this._size++;
+    return;
+  }
+
+  const next = node.next;
+
+  newNode.prev = node;
+  newNode.next = next;
+
+  node.next = newNode;
+  next.prev = newNode;
+
+  this._size++;
+}
+
+insertBeforeNode(node, newNode) {
+  if (node == null || newNode == null) {
+    throw new RangeError("Node must not be null");
+  }
+
+  // if inserting before head, it's basically addFirst with an existing node
+  if (node === this.head) {
+    newNode.prev = null;
+    newNode.next = this.head;
+    this.head.prev = newNode;
+    this.head = newNode;
+    this._size++;
+    return;
+  }
+
+  const prev = node.prev;
+
+  newNode.prev = prev;
+  newNode.next = node;
+
+  prev.next = newNode;
+  node.prev = newNode;
+
+  this._size++;
+}
+
 
 }
