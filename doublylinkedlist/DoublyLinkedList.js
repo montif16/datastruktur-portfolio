@@ -59,4 +59,25 @@ addFirst(data) {
   this._size++;
 }
 
+removeFirst() {
+  if (this.head === null) return null;
+
+  const removed = this.head;
+
+  // single element
+  if (this.head === this.tail) {
+    this.head = null;
+    this.tail = null;
+    this._size = 0;
+    return removed.data;
+  }
+
+  // move head forward
+  this.head = removed.next;
+  this.head.prev = null;
+
+  this._size--;
+  return removed.data;
+}
+
 }

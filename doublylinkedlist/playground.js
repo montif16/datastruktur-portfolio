@@ -1,6 +1,7 @@
 import DoublyLinkedList from "./DoublyLinkedList.js";
 
-
+// AddLast
+/*
 const list = new DoublyLinkedList();
 
 list.addLast("A");
@@ -13,3 +14,40 @@ list.addLast("C");
 list.printList();
 
 console.log("tail.prev.data =", list.tail.prev.data);
+*/
+/*
+//AddFirst
+const list = new DoublyLinkedList();
+
+list.addFirst("B");
+list.printList();
+
+list.addFirst("A");
+list.printList();
+
+list.addLast("C");
+list.printList();
+
+console.log("head.data =", list.head.data);
+console.log("tail.data =", list.tail.data);
+console.log("head.next.data =", list.head.next.data);
+console.log("tail.prev.data =", list.tail.prev.data);
+*/
+
+//RemoveFirst
+const list = new DoublyLinkedList();
+list.addLast("A");
+list.addLast("B");
+list.addLast("C");
+list.printList();
+
+console.log("removed:", list.removeFirst()); // A
+list.printList();
+
+console.log("removed:", list.removeFirst()); // B
+list.printList();
+
+console.log("removed:", list.removeFirst()); // C
+list.printList();
+
+console.log("removed:", list.removeFirst()); // null
