@@ -91,8 +91,8 @@ try {
 }
 */
 
-//Insert
-
+//Insert (index)
+/*
 const list = new DoublyLinkedList();
 list.addLast("A");
 list.addLast("C");
@@ -105,4 +105,21 @@ list.printList(); // START <-> A <-> B <-> C
 
 list.insert(list.size(), "END");
 list.printList(); // START <-> A <-> B <-> C <-> END
+*/
+// Remove (index)
+const list = new DoublyLinkedList();
+list.addLast("A");
+list.addLast("B");
+list.addLast("C");
+list.addLast("D");
+list.printList();
+
+console.log("removed:", list.remove(2)); // C
+list.printList(); // A <-> B <-> D
+
+console.log("removed:", list.remove(0)); // A
+list.printList(); // B <-> D
+
+console.log("removed:", list.remove(list.size() - 1)); // D
+list.printList(); // B
 

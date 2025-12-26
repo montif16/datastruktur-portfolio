@@ -153,5 +153,21 @@ this._checkIndexInsert(index)
   this._size++;
 }
 
+remove(index) {
+  this._checkIndexAccess(index);
+
+  if (index === 0) return this.removeFirst();
+  if (index === this._size - 1) return this.removeLast();
+
+  const node = this.getNode(index);
+
+  node.prev.next = node.next;
+  node.next.prev = node.prev;
+
+  this._size--;
+  return node.data;
+}
+
+
 
 }
