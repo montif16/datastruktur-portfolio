@@ -18,4 +18,12 @@ export default class Grid {
   size() {
     return this._data.length;
   }
+
+  indexFor({ row, col }) {
+  if (row < 0 || row >= this._rows) return undefined;
+  if (col < 0 || col >= this._cols) return undefined;
+
+  return row * this._cols + col;
+}
+
 }
