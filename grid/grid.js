@@ -89,5 +89,17 @@ neighbourValues(pos) {
   return this.neighbours(pos).map(cell => cell.value);
 }
 
+nextInRow({ row, col }) {
+  return this.getCell({ row, col: col + 1 });
+}
+
+nextInCol({ row, col }) {
+  return this.getCell({ row: row + 1, col });
+}
+
+fill(value) {
+  this._data.fill(value);
+}
+
 
 }
