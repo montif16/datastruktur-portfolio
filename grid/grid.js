@@ -64,5 +64,17 @@ getCell({ row, col }) {
   };
 }
 
+south(pos) {
+  return this.getCell({ row: pos.row + 1, col: pos.col });
+}
+
+west(pos) {
+  return this.getCell({ row: pos.row, col: pos.col - 1 });
+}
+
+east(pos) {
+  return this.getCell({ row: pos.row, col: pos.col + 1 });
+}
+
 
 }
