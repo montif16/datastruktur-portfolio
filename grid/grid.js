@@ -26,4 +26,16 @@ export default class Grid {
   return row * this._cols + col;
 }
 
+rowColFor(index) {
+  if (index < 0 || index >= this._data.length) return undefined;
+
+  const row = Math.floor(index / this._cols);
+  const col = index % this._cols;
+
+  return { row, col };
+}
+
+
+
+
 }
