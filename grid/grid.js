@@ -53,6 +53,16 @@ north({ row, col }) {
   return this.getCell({ row: row - 1, col });
 }
 
+getCell({ row, col }) {
+  const index = this.indexFor({ row, col });
+  if (index === undefined) return undefined;
+
+  return {
+    row,
+    col,
+    value: this._data[index]
+  };
+}
 
 
 }
