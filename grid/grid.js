@@ -35,6 +35,19 @@ rowColFor(index) {
   return { row, col };
 }
 
+set({ row, col }, value) {
+  const index = this.indexFor({ row, col });
+  if (index === undefined) return;
+
+  this._data[index] = value;
+}
+
+get({ row, col }) {
+  const index = this.indexFor({ row, col });
+  if (index === undefined) return undefined;
+
+  return this._data[index];
+}
 
 
 
