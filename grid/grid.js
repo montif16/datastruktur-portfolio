@@ -49,6 +49,10 @@ get({ row, col }) {
   return this._data[index];
 }
 
+north({ row, col }) {
+  return this.getCell({ row: row - 1, col });
+}
+
 
 
 }
