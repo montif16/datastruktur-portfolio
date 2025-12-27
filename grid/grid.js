@@ -76,5 +76,18 @@ east(pos) {
   return this.getCell({ row: pos.row, col: pos.col + 1 });
 }
 
+neighbours(pos) {
+  return [
+    this.north(pos),
+    this.south(pos),
+    this.west(pos),
+    this.east(pos)
+  ].filter(Boolean);
+}
+
+neighbourValues(pos) {
+  return this.neighbours(pos).map(cell => cell.value);
+}
+
 
 }
