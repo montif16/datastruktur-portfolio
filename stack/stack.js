@@ -16,5 +16,15 @@ push(data) {
   this._size++;
 }
 
+pop() {
+  if (this.head === null) return null;
+
+  const data = this.head.data;
+  this.head = this.head.next;
+  this._size--;
+  return data;
+}
+
+
 
 }
