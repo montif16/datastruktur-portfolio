@@ -25,6 +25,9 @@ pop() {
   return data;
 }
 
+peek() {
+  return this.head ? this.head.data : null;
+}
 
 
 }
