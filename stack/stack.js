@@ -29,5 +29,18 @@ peek() {
   return this.head ? this.head.data : null;
 }
 
+get(index) {
+  if (!Number.isInteger(index) || index < 0 || index >= this._size) {
+    throw new RangeError("Index out of bounds");
+  }
+
+  let current = this.head;
+  for (let i = 0; i < index; i++) {
+    current = current.next;
+  }
+
+  return current.data;
+}
+
 
 }
