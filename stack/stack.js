@@ -9,4 +9,12 @@ export default class Stack {
   size() {
     return this._size;
   }
+
+push(data) {
+  const newNode = { data, next: this.head };
+  this.head = newNode;
+  this._size++;
+}
+
+
 }
