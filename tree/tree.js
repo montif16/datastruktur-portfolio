@@ -15,4 +15,9 @@ lastChild() {
   return this.childNodes[this.childNodes.length - 1] ?? null;
 }
 
+hasChildNodes() {
+  return this.childNodes.length > 0;
+}
+
+
 }
