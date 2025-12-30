@@ -6,4 +6,13 @@ export class Node {
     this.parent = null;
     this.childNodes = [];
   }
+
+firstChild() {
+  return this.childNodes[0] ?? null;
+}
+
+lastChild() {
+  return this.childNodes[this.childNodes.length - 1] ?? null;
+}
+
 }
