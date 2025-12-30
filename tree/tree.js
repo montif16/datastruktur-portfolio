@@ -19,5 +19,9 @@ hasChildNodes() {
   return this.childNodes.length > 0;
 }
 
+appendChild(child) {
+    child.parent = this;
+    this.childNodes.push(child);
+}
 
 }
